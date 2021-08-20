@@ -40,10 +40,10 @@ public class CredentialService {
     public List<Credential> getCredentials(Integer userId) {
     	List<Credential> credentials = credentialMapper.selectCredentialByUserId(userId);
     	
-    	for(Credential credential: credentials) {
-    		String decryptedPassword = encryptionService.decryptValue(credential.getPassword(), credential.getKey());
-    		credential.setPassword(decryptedPassword);    		
-    	}
+//    	for(Credential credential: credentials) {
+//    		String decryptedPassword = encryptionService.decryptValue(credential.getPassword(), credential.getKey());
+//    		credential.setPassword(decryptedPassword);    		
+//    	}
         return credentials;
     }
     

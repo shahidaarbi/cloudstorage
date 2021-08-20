@@ -17,6 +17,14 @@ public class FileService {
         this.fileMapper = fileMapper;
     }
     
+    /**
+     * Load file from DB 
+     * 
+     * @param multipartFile
+     * @param userId
+     * @return
+     * @throws IOException
+     */
     public Integer loadFile(MultipartFile multipartFile, Integer userId) throws IOException {
         File file = new File (null, multipartFile.getOriginalFilename(), multipartFile.getContentType(),
                 multipartFile.getSize(), userId, multipartFile.getBytes());
@@ -24,6 +32,12 @@ public class FileService {
     }
     
 
+    /**
+     * Get all files from DB
+     * 
+     * @param userId
+     * @return
+     */
     public List<File> getAllFiles(Integer userId) {
         return fileMapper.getFilesByUserId(userId);
     }
@@ -39,6 +53,13 @@ public class FileService {
     		return false;
     }
 
+    /**
+     * Delete file from DB
+     * 
+     * @param fileId
+     * @param userid
+     * @return
+     */
     public int deleteFile(Integer fileId, Integer userid) {
         return fileMapper.delete(fileId, userid);
     }

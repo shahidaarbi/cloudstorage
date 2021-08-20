@@ -25,6 +25,9 @@ public class LoginPage {
 
 	@FindBy(css = "#error-msg")
 	private WebElement errorMessage;
+	
+	@FindBy(css = "#success-msg")
+	private WebElement successMessage;
 
 	public LoginPage(WebDriver webDriver) {
 		this.driver = webDriver;
@@ -56,4 +59,7 @@ public class LoginPage {
 		return this.logoutMessage.isDisplayed();
 	}
 
+	public boolean getSuccessMessage() {
+		return this.successMessage.isDisplayed();
+	}
 }
