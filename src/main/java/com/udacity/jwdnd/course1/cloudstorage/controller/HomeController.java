@@ -146,7 +146,7 @@ public class HomeController {
 
 			if (file.isEmpty() || file.getSize() > 5000000) {
 				redirectAttributes.addFlashAttribute("fileError", true);
-				redirectAttributes.addFlashAttribute("fileMessage", "File upload error: Invalid file");
+				redirectAttributes.addFlashAttribute("fileMessage", "File upload error: Invalid file, maximum size 5MB");
 				return "redirect:/home";
 			}
 
